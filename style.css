@@ -1,0 +1,214 @@
+.navbar-static-top {
+    min-height: 4.2em;
+}
+
+.brand-logo{
+    height: 3.56em;
+    margin-top:-5px;
+}
+
+.navbar-custom { 
+    background-color: #164c34; 
+} 
+.navbar-custom a{ 
+    color: #f3f3f3;
+    font-family: "Roboto", "Lucida Grande", "Lucida Sans", sans-serif;
+font-size: 1.13rem !important;
+font-weight: bolder;
+text-transform: uppercase;
+} 
+
+.nav-links{
+    line-height: 4.2rem;
+    margin-top: 8px;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: transparent !important;
+}
+.nav-button{
+    background-color: #3d6274;
+}
+.nav-button-icon{
+    color: gray! important;
+    background-color: transparent! important;
+    
+}
+.nav-button-icon .glyphicon{
+    font-size: 25px;
+}
+.nav-button-icon:hover{
+    background-color: #f3f3f3 !important;
+}
+.icon-bar{
+    background-color:grey;
+}
+.caret.caret-up {
+    border-top-width: 0;
+    border-bottom: 4px solid #000;
+  }
+
+  .glyphicon-triangle-right,.glyphicon-triangle-bottom{
+    font-size: 10px;
+  }
+  .dropdown-toggle{
+      background-color: transparent;
+      border: 1px solid black;
+  }
+  .dropdown-menu{
+      min-width: 200px;
+      max-width: 200px;
+      
+  }
+  .ddl-options{
+    max-height: 250px;
+    overflow: scroll;
+  }
+  .dropdown-menu input{
+      max-width: 100%;
+  }
+  .category-badge{
+      position: relative;
+      display:inline-block;
+      height: 10px;
+      width: 10px;
+      background-color: brown;
+      margin-right: 5px;
+  }
+  .category-name{
+    font-size: 1em;
+    font-weight: normal;
+  }
+  .category-desc{
+    font-size: .8706em;
+  }
+  .category-count{
+    margin-left: 0.5em;
+    font-weight: normal;
+    color: gray;
+    font-size: .8706em
+  }
+  .dropdown-menu ul{
+    padding: 0;
+    list-style-type: none;
+    }
+  .dropdown-menu ul li {
+      list-style: none;
+      margin: 1em;
+  }
+  .dropdown-menu ul li:hover{
+      background-color: #e4edf1;
+  }
+.cat1{
+background-color: #808281;
+}
+.cat2{
+    background-color: #3AB54A;
+}
+.cat3{
+    background-color: #25AAE2;
+}
+.cat4{
+    background-color: #F1592A;
+}
+.cat5{
+    background-color: #652D90;
+}
+
+.tbl-cat1{
+    border-left: 6px solid #808281;
+    }
+    .tbl-cat2{
+        border-left: 6px solid #3AB54A;
+    }
+    .tbl-cat3{
+        border-left: 6px solid #25AAE2;
+    }
+    .tbl-cat4{
+        border-left: 6px solid #F1592A;
+    }
+    .tbl-cat5{
+        border-left: 6px solid #652D90;
+    }
+
+.header-action{
+    margin-top:90px;
+    background-color: #fff !important;
+    font-weight: 400;
+}
+.btn-action, .btn-action-active , .btn-action:hover{
+    font-size: 1.1487em;
+    line-height: 1;
+    box-sizing: border-box;
+    min-height: 30px;
+    align-items: center;
+    transition: background-color 0.15s;
+}
+.btn-action-active , .btn-action:hover{
+    background-color: #164c34;
+    color: #fff;
+}
+
+.tbl-cat-header{
+    font-size: 1.3195em;
+    font-weight: 800;
+    display: inline-block;
+white-space: nowrap;
+text-overflow: ellipsis;
+vertical-align: text-top;
+cursor: pointer;
+
+}
+.tbl-cat-content{
+    margin-top: 0.5em;
+overflow: hidden;
+color: #4d4d4d;
+}
+.tbl-cat-subcategories{
+    position: relative;
+    margin-top: 5px;;
+}
+.tbl-cat-subcategories .value{
+    margin:2px;
+}
+.table-content > div {
+    border-top: 0.01em solid #808281;
+    border-bottom: 0.01em solid #808281;
+    min-height: 100px;
+  }
+  .tbl-cat-value{
+    display: block;
+    font-size: 1.1487em;
+      text-align: right;
+  }
+.tbl-latest span{
+margin-left: 5px;
+}
+
+.tbl-latest a, .category-desc a{
+    margin-left: 5px;
+overflow: hidden;
+flex: 0 1 auto;
+color: #51839d;
+cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-action, .btn-action-active , .btn-action:hover, .dropdown-menu, .table-content > div {
+      min-height: auto; 
+    border-bottom: none;
+
+    }
+    html{
+        width: 100vw !important;
+    }
+
+    .nav-button{
+        margin-top: 10px !important;
+    }
+    .nav-button-icon{
+        margin-top: 5px !important;
+    }
+  }
+

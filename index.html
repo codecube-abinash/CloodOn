@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Django Forun</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png"
+        href="https://aws1.discourse-cdn.com/standard14/uploads/djangoproject/optimized/1X/d7166b07bd538877fa4b0236f0fb5410098bda98_2_32x32.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-custom navbar-fixed-top ">
+        <div class="container pt-1">
+            <div class="container-fluid">
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle pull-right" data-toggle="collapse"
+                        data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="btn nav-button-icon pull-right hidden-lg">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </a>
+                    <button class="widget-button btn btn-primary btn-sm nav-button pull-right hidden-lg">
+                        <span><span class="glyphicon glyphicon-user"></span>&nbsp;Log In</span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img
+                            src="https://aws1.discourse-cdn.com/standard14/uploads/djangoproject/original/1X/84110597257b2d4fa1d418bf7610c18854b87e63.png"
+                            alt="Django Forum" class="brand-logo"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right nav-links">
+                        <li class="active"><a href="#">PROJECT HOMEPAGE</a></li>
+                        <li><a href="#">DOWNLOAD</a></li>
+                        <li><a href="#">DOCUMENTATION</a></li>
+                        <li><a href="#">CODE</a></li>
+                        <li><a href="#">ISSUES</a></li>
+                        <button class="widget-button btn btn-primary btn-sm nav-button hidden-xs"><span>Sign
+                                Up</span></button>
+                        <button class="widget-button btn btn-primary btn-sm nav-button hidden-xs">
+                            <span><span class="glyphicon glyphicon-user"></span>&nbsp;Log In</span>
+                        </button>
+                        <a href="#" class="btn nav-button-icon hidden-xs">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </a>
+                        <a href="#" class="btn nav-button-icon hidden-xs">
+                            <span class="glyphicon glyphicon-menu-hamburger"></span>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="container header-action">
+        <span class="dropdown ">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">all categories
+                <span class="glyphicon glyphicon-triangle-right"></span></button>
+            <div class="dropdown-menu visible-xs-*">
+                <ul>
+                    <li>Categories</li>
+                    <li>Latest</li>
+                    <li>Top</li>
+                </ul>
+            </div>
+            <div class="dropdown-menu hidden-xs">
+                <div>
+                    <input type="search" class="form-control" placeholder="Search..." id="searchInput"
+                        onkeyup="filterFunction()" />
+                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                </div>
+                <div class="ddl-options ">
+                    <ul>
+                        <li>
+                            <div class="category-status">
+                                <span class="category-badge cat1"></span><span
+                                    class="category-name">Announcements</span>
+                                <span class="category-count">× 5</span>
+                            </div>
+                            <div class="category-desc">Announcements and invited feedback about the forum.</div>
+                        </li>
+                        <li>
+                            <div class="category-status">
+                                <span class="category-badge cat2"></span><span class="category-name">Django
+                                    Internals</span>
+                                <span class="category-count">× 40</span>
+                            </div>
+                            <div class="category-desc">For discussing the development of Django itself, like the <a
+                                    href="https://groups.google.com/d/forum/django-developers">django-developers mailing
+                                    list</a>.</div>
+                        </li>
+                        <li>
+                            <div class="category-status">
+                                <span class="category-badge cat3"></span><span class="category-name">Using
+                                    Django</span>
+                                <span class="category-count">× 1035
+                                </span>
+                            </div>
+                            <div class="category-desc">For discussions about using Django, building sites and projects,
+                                like
+                                the <a href="https://groups.google.com/d/forum/django-users">django-users mailing
+                                    list</a>.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="category-status">
+                                <span class="category-badge cat4"></span><span class="category-name">Show &amp;
+                                    Tell</span><span class="category-count">× 5</span>
+                            </div>
+                            <div class="category-desc">Show off your projects, ask for feedback, and discover new things
+                                written in Django!</div>
+                        </li>
+                        <li>
+                            <div class="category-status">
+                                <span class="category-badge cat5"></span><span class="category-name">Events</span><span
+                                    class="category-count">×
+                                    7</span>
+                            </div>
+                            <div class="category-desc">Discuss Django conferences, sprints, meetups and other events!
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </span>
+        &nbsp;&nbsp;
+        <button type="button" class=" btn btn-action btn-action-active hidden-xs">Categories</button>
+        <button type="button" class=" btn btn-action hidden-xs">Latest</button>
+        <button type="button" class=" btn btn-action hidden-xs">Top</button>
+    </div>
+
+    <br>
+    <br>
+    <div class="container table-data">
+        <div class="row hidden-xs">
+            <div class="col-md-6 ">Category</div>
+            <div class="col-md-1">Topics</div>
+            <div class="col-md-5">Latest</div>
+        </div>
+        <br>
+        <div class="row table-content tbl-cat1">
+            <div class="col-md-6  col-xs-10 ">
+                <div class="tbl-cat-header">
+                    Announcements
+                </div>
+                <div class="tbl-cat-content hidden-xs">
+                    Announcements and invited feedback about the forum.
+                </div>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <span class="tbl-cat-value">5</span>
+            </div>
+            <div class="col-md-5 ">
+                <div class="tbl-latest">
+                    <span class="glyphicon glyphicon-lock"></span><span class="glyphicon glyphicon-pushpin"></span><a
+                        href="#">Welcome to the Django forum!</a><span class="date">Sep '19</span>
+                </div>
+                <div class="tbl-latest">
+                    <span class="glyphicon glyphicon-lock"></span><a href="#">Django Release Announcements</a><span
+                        class="date">15d</span>
+                </div>
+                <div class="tbl-latest">
+                    <a href="#">Forum Feedback</a><span class="date">21d</span>
+                </div>
+            </div>
+        </div>
+        <div class="row table-content tbl-cat2">
+            <div class="col-md-6 col-xs-10 ">
+                <div class="tbl-cat-header ">
+                    Django Internals
+                </div>
+                <div class="tbl-cat-content hidden-xs">
+                    For discussing the development of Django itself, like the django-developers mailing list.
+                </div>
+                <div class="tbl-cat-subcategories hidden-xs">
+                    <span class="category-badge cat5"></span><span class="value">Async</span>
+                    <span class="category-badge cat3"></span><span class="value">ORM</span>
+                    <span class="category-badge cat4"></span><span class="value">Mentorship</span>
+                </div>
+
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <span class="tbl-cat-value ">101</span>
+            </div>
+            <div class="col-md-5">
+                <div class="tbl-latest">
+                    <a href="#">Common jobs/queue API?</a><span class="date">3d</span>
+                </div>
+                <div class="tbl-latest">
+                    <a href="#">tests - signals - fixtures - mixing of levels
+                        between apps and project?</a><span class="date">7d</span>
+                </div>
+                <div class="tbl-latest">
+                    <a href="#">Best way to contribute to documentation</a><span class="date">13d</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row table-content tbl-cat3">
+            <div class="col-md-6 col-xs-10 ">
+                <div class="tbl-cat-header">
+                    Using Django
+                </div>
+                <div class="tbl-cat-content hidden-xs">
+                    For discussions about using Django, building sites and projects, like the django-users mailing list.
+                </div>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <span class="tbl-cat-value">1036</span>
+            </div>
+            <div class="col-md-5">
+                <div class="tbl-latest">
+                    <a href="#">cannot makemigratoins due to my custom field in models.py</a><span
+                        class="date">5h</span>
+                </div>
+                <div class="tbl-latest">
+                    <a href="#">Error Displaying User profiles in filtered format</a><span class="date">42m</span>
+                </div>
+                <div class="tbl-latest">
+                    <a href="#">Randomly Can’t connect to MariaDB from Python & Django</a><span class="date">5h</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row table-content tbl-cat4">
+            <div class="col-md-6 col-xs-10 ">
+                <div class="tbl-cat-header">
+                    Show & Tell
+                </div>
+                <div class="tbl-cat-content hidden-xs">
+                    Show off your projects, ask for feedback, and discover new things written in Django!
+                </div>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <span class="tbl-cat-value">56</span>
+            </div>
+            <div class="col-md-5">
+                <div class="tbl-latest">
+                    <a href="#">Squeeze My Lizard - newspaper style blog</a><span class="date">14h</span>
+                </div>
+                <div class="tbl-latest">
+                    <a href="#">From Concept To Live In Two Weeks With Django</a><span class="date">1d</span>
+                </div>
+                <div class="tbl-latest">
+                    <a href="#">django-unicorn, a fullstack framework for Django</a><span class="date">2d</span>
+                </div>
+            </div>
+        </div>
+        <div class="row table-content tbl-cat5">
+            <div class="col-md-6 col-xs-10 ">
+                <div class="tbl-cat-header">
+                    Events
+                </div>
+                <div class="tbl-cat-content hidden-xs">
+                    Discuss Django conferences, sprints, meetups and other events!
+                </div>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <span class="tbl-cat-value">7</span>
+            </div>
+            <div class="col-md-5">
+                <div class="tbl-latest">
+                    <a href="#">Call for Participation for Django Day Copenhagen 2020
+                    </a><span class="date">29d</span>
+                </div>
+                <div class="tbl-latest">
+                    <a href="#">DjangoCon US 2020 in San Diego</a><span class="date">Jul 18</span>
+                </div>
+                <div class="tbl-latest">
+                    <a href="#">DjangoCon Europe 2020</a><span class="date">Jul 14</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
